@@ -1,5 +1,4 @@
 FROM openjdk:18
-VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+EXPOSE 8080
+ADD target/address-book-spring-boot.jar address-book-spring-boot.jar
+ENTRYPOINT ["java", "-jar", "address-book-spring-boot.jar"]
